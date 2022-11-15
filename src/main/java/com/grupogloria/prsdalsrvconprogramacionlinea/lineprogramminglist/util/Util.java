@@ -1,5 +1,6 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,5 +27,14 @@ public class Util {
         }
 
         return "GENERIC ERROR" + " | " + res;
+    }
+
+    public static String transformDate(String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d = sdf.parse(date);
+        String formattedTime = output.format(d);
+
+        return formattedTime;
     }
 }

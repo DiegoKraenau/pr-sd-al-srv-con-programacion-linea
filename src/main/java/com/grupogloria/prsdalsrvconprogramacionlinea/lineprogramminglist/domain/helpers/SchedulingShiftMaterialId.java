@@ -18,4 +18,6 @@ public class SchedulingShiftMaterialId implements Serializable {
     private String turno;
 
     private Long idMaterial;
+
+    private Long supervisor;
 }

@@ -1,15 +1,15 @@
-INSERT INTO public.categoria_material(
-	cod_catmaterial, flg_anulado, categoria_material, usu_creacion, usu_actualizacion, equipo_creacion, equipo_actualizacion,fec_creacion,fec_actualizacion)
-	VALUES ('JK2', false, 'asfasfasf', 'usu1', 'usu1', 'eq1', 'eq2', '2022-06-21T00:00:00', '2022-06-21T00:00:00');
+INSERT INTO public.programacion_linea(
+	id_programacion, fec_creacion, equipo_creacion, equipo_actualizacion, fec_actualizacion, usu_creacion, usu_actualizacion, fecha_programacion, flg_anulado, hora_final, hora_inicio, id_centro, id_estado_programacion, id_linea, version)
+	VALUES (1, '2022-06-21T00:00:00', 'eq1', 'eq1', '2022-06-21T00:00:00', 'usu1', 'usu1', '2022-06-21T00:00:00', false, '2022-06-21T00:00:00', '2022-06-21T00:00:00', 'cent', 'activo', 1, 'v10');
 
-INSERT INTO public.material(
-	id_material, fec_creacion, nombre_largo, presentacion, nombre_corto, fec_actualizacion, flg_anulado, dias_vencimiento, tipo_vencimiento, cod_catmaterial, usu_creacion, usu_actualizacion, equipo_creacion, equipo_actualizacion)
-	VALUES (1,'2022-06-21T00:00:00', 'test', 'test', 'test', '2022-06-21T00:00:00', false, 4, 'test', 'JK2', 'usu1', 'usu1', 'eq1', 'eq2');
+INSERT INTO public.supervisor(
+	nombre, cod_supervisor, abrev, fec_creacion, equipo_creacion, equipo_actualizacion, fec_actualizacion, usu_creacion, usu_actualizacion, flg_anulado)
+	VALUES ('Diego', 1, 'DK', '2022-06-21T00:00:00', 'eq1', 'eq2', '2022-06-21T00:00:00', 'usu1', 'usu1', false);
 
-INSERT INTO public.center(
-	id_centro, fec_creacion, equipo_creacion, equipo_actualizacion, fec_actualizacion, usu_creacion, usu_actualizacion, flg_anulado, centro, id_pais, id_departamento, latitud, longitud)
-	VALUES ('cent', '2022-06-21T00:00:00', 'eq1', 'eq1', '2022-06-21T00:00:00', 'usu1', 'usu1', false, 'CENTRO 1', 'PER', 2, 50, 50);
+INSERT INTO public.turno(
+	cod_turno, flg_anulado, hora_fin, hora_inicio, sec, turno)
+	VALUES ('A', false, '2022-06-21T00:00:00', '2022-06-21T00:00:00', 1, 'AM');
 
-INSERT INTO public.centro_material(
-	id_centro, id_material, fec_creacion, equipo_creacion, equipo_actualizacion, fec_actualizacion, usu_creacion, usu_actualizacion)
-	VALUES ('cent', 1, '2022-06-21T00:00:00', 'eq1', 'eq1', '2022-06-21T00:00:00', 'usu1', 'usu1');
+INSERT INTO public.programacion_turno_material(
+	id_material, id_programacion, cod_turno, fec_creacion, equipo_creacion, equipo_actualizacion, fec_actualizacion, usu_creacion, usu_actualizacion, cod_carga_data, fecha_contabilizacion, fecha_documento, fecha_produccion, fecha_vencimiento, flg_anulado, hora_final, hora_inicio, id_estado_programacion, ingreso, minutos_just, produccion, teorico, tiempo_cnv, tiempo_pnp, tiempo_pp, tiempo_td, tiempo_ttt, velocidad, id_supervisor)
+	VALUES (1, 1, 'A', '2022-06-21T00:00:00', 'eq1', 'eq2', '2022-06-21T00:00:00', 'usu1', 'usu1', 'cod_carga_data', '2022-06-21T00:00:00', '2022-06-21T00:00:00', '2022-06-21T00:00:00', '2022-06-21T00:00:00', false, '2022-06-21T00:00:00', '2022-06-21T00:00:00', 'ID', 1, 1, 1, 'teorico', 1, 1, 1, 1, 1, 1, 1);

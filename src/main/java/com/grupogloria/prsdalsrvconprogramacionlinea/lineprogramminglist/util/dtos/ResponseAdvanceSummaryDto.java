@@ -1,5 +1,7 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util.dtos;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,13 +11,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseMaterialCategoryDto {
+public class ResponseAdvanceSummaryDto {
 
-    // @Length(min = 3, max = 3)
-    private String codCatMaterial;
-
-    private String categoriaMaterial;
-
-    private Boolean flgAnulado;
-
+    private List<ResponseLineProgrammingDto> lineas;
 }

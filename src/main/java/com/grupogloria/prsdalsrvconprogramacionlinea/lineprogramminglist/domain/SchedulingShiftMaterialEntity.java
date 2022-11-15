@@ -50,6 +50,12 @@ public class SchedulingShiftMaterialEntity extends AuditEntity {
     @Column(name = "id_material")
     private Long idMaterial;
 
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "id_supervisor", nullable = false)
+    @JsonManagedReference
+    private SupervisorEntity supervisor;
+
     @Column(name = "hora_final", nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Timestamp horaFinal;
@@ -96,7 +102,7 @@ public class SchedulingShiftMaterialEntity extends AuditEntity {
 
     // TODO: Consultar formula
     @Column(name = "tiempo_cnv", nullable = false)
-    private String tiempoCNV;
+    private Integer tiempoCNV;
 
     @Column(name = "tiempo_td", nullable = false)
     private Integer tiempoTD;

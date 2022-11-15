@@ -1,21 +1,21 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util.dtos;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseCenterDto {
+public class ResponseSupervisorDto {
 
-    private String idCenter;
+    private Long codSupervisor;
 
-    private String center;
+    private String nombre;
 
-    private List<ResponseMaterialDto> materials;
+    private String abrev;
+
+    private Boolean flgAnulado;
 }

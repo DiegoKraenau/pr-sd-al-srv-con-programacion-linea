@@ -1,14 +1,19 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -58,5 +63,9 @@ public class LineProgrammingEntity extends AuditEntity {
 
     @Column(name = "flg_anulado")
     private Boolean flgAnulado;
+
+    @OneToMany(mappedBy = "programacion", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonBackReference
+    private List<SchedulingShiftMaterialEntity> turnos;
 
 }

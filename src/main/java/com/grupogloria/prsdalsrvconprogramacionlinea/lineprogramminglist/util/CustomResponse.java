@@ -3,8 +3,12 @@ package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util;
 import java.io.Serializable;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
+@SuperBuilder
+@NoArgsConstructor
 public class CustomResponse<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
