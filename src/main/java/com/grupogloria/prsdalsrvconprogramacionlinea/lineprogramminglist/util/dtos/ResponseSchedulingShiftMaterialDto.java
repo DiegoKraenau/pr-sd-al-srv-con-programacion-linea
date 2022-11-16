@@ -23,8 +23,10 @@ public class ResponseSchedulingShiftMaterialDto {
 
     private Long idMaterial;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Timestamp horaFinal;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Timestamp horaInicio;
 
     private String idEstadoProgramacion;
