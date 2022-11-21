@@ -1,7 +1,5 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util.dtos;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +12,11 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties
-public class ResponseAdvanceSummaryDto {
+public class UnitMeasureDto {
 
-    private List<ResponseLineProgrammingDto> lineas;
+    private String idUnidadMedida;
+
+    private String unidadMedida;
+
+    private String unidadMedidaLarga;
 }

@@ -1,5 +1,9 @@
 package com.grupogloria.prsdalsrvconprogramacionlinea.lineprogramminglist.util.dtos;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +13,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties
 public class ResponseMaterialDto {
 
     private Long id;
@@ -26,4 +31,6 @@ public class ResponseMaterialDto {
     private String tipoVencimiento;
 
     private ResponseMaterialCategoryDto categoriaMaterial;
+
+    private List<UnitMeasureDto> unidadMedidas;
 }
